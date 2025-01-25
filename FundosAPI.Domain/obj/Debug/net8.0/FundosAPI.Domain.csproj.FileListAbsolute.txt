@@ -1,0 +1,13 @@
+D:\Projetos\FundosAPI\FundosAPI.Domain\bin\Debug\net8.0\FundosAPI.Domain.deps.json
+D:\Projetos\FundosAPI\FundosAPI.Domain\bin\Debug\net8.0\FundosAPI.Domain.runtimeconfig.json
+D:\Projetos\FundosAPI\FundosAPI.Domain\bin\Debug\net8.0\FundosAPI.Domain.dll
+D:\Projetos\FundosAPI\FundosAPI.Domain\bin\Debug\net8.0\FundosAPI.Domain.pdb
+D:\Projetos\FundosAPI\FundosAPI.Domain\obj\Debug\net8.0\FundosAPI.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\FundosAPI\FundosAPI.Domain\obj\Debug\net8.0\FundosAPI.Domain.AssemblyInfoInputs.cache
+D:\Projetos\FundosAPI\FundosAPI.Domain\obj\Debug\net8.0\FundosAPI.Domain.AssemblyInfo.cs
+D:\Projetos\FundosAPI\FundosAPI.Domain\obj\Debug\net8.0\FundosAPI.Domain.csproj.CoreCompileInputs.cache
+D:\Projetos\FundosAPI\FundosAPI.Domain\obj\Debug\net8.0\FundosAPI.Domain.dll
+D:\Projetos\FundosAPI\FundosAPI.Domain\obj\Debug\net8.0\refint\FundosAPI.Domain.dll
+D:\Projetos\FundosAPI\FundosAPI.Domain\obj\Debug\net8.0\FundosAPI.Domain.pdb
+D:\Projetos\FundosAPI\FundosAPI.Domain\obj\Debug\net8.0\FundosAPI.Domain.genruntimeconfig.cache
+D:\Projetos\FundosAPI\FundosAPI.Domain\obj\Debug\net8.0\ref\FundosAPI.Domain.dll
