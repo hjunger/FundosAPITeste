@@ -10,6 +10,8 @@ namespace FundosAPI.Application.Services
 {
     public class CotaFundoService : BaseService<CotaFundo, CotaFundoResponseDto, CotaFundoCreateDto, CotaFundoUpdateDto>, IService<CotaFundoResponseDto, CotaFundoCreateDto, CotaFundoUpdateDto>
     {
+        private readonly Dictionary<int, Fundo> _dictFundos = new Dictionary<int, Fundo>();
+
         public CotaFundoService(IMapper mapper, IUnitOfWork unitOfWork) : base(mapper, unitOfWork)
         {
         }
@@ -18,6 +20,8 @@ namespace FundosAPI.Application.Services
 
         protected override bool ValidaDto(object dto, List<ValidationResult> results)
         {
+            _dictFundos.Clear();
+
             var isValid = base.ValidaDto(dto, results);
             if (!isValid)
             {
@@ -52,7 +56,7 @@ namespace FundosAPI.Application.Services
                 return false;
             }
 
-            var fundo = UnitOfWork.FundoRepository.FindById(fundoId);
+            var fundo = GetFundo(fundoId);
             if (fundo == null)
             {
                 results.Add(new ValidationResult("Não foi possível determinar o fundo."));
@@ -72,6 +76,28 @@ namespace FundosAPI.Application.Services
             }
 
             return results.Count == 0;
+        }
+
+        private Fundo? GetFundo(int fundoId)
+        {
+            if(_dictFundos.TryGetValue(fundoId, out var fundoRetorno))
+            {
+                return fundoRetorno;
+            }
+
+            var fundo = UnitOfWork.FundoRepository.FindById(fundoId);
+            if(fundo != null)
+            {
+                _dictFundos[fundoId] = fundo;
+            }
+            return fundo;
+        }
+
+        public List<CotaFundoResponseDto> GetCotasPorFundo(int fundoId)
+        {
+            var repository = UnitOfWork.CotaFundoRepository;
+            var cotasDoFundo = repository.GetCotaFundosByFundoId(fundoId);
+            return Mapper.Map<List<CotaFundoResponseDto>>(cotasDoFundo);
         }
     }
 }

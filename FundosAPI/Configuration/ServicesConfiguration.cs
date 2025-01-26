@@ -1,7 +1,5 @@
 ﻿using FundosAPI.Application.Services;
-using FundosAPI.Dados.Contexto;
-using FundosAPI.Dados.UnitOfWork;
-using Microsoft.EntityFrameworkCore;
+using FundosAPI.CrossCutting.ExcelReader;
 
 namespace FundosAPI.Configuration
 {
@@ -13,6 +11,8 @@ namespace FundosAPI.Configuration
 
             builder.Services.AddScoped<FundoService>();
             builder.Services.AddScoped<CotaFundoService>();
+
+            builder.Services.AddScoped<ExcelFileReader>();
 
             return builder;
         }

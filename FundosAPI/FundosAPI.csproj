@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FundosAPI.Application\FundosAPI.Application.csproj" />
+    <ProjectReference Include="..\FundosAPI.CrossCutting\FundosAPI.CrossCutting.csproj" />
     <ProjectReference Include="..\FundosAPI.Dados\FundosAPI.Dados.csproj" />
   </ItemGroup>
 

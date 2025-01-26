@@ -2,6 +2,7 @@
 using FundosAPI.Application.Interfaces;
 using FundosAPI.Application.Services;
 using FundosAPI.Controllers.Base;
+using FundosAPI.CrossCutting.ExcelReader;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FundosAPI.Controllers
@@ -10,7 +11,7 @@ namespace FundosAPI.Controllers
     [Route("[controller]")]
     public class FundoController : CrudBaseController<FundoResponseDto, FundoCreateDto, FundoUpdateDto>
     {
-        public FundoController(FundoService service) : base(service)
+        public FundoController(FundoService service, ExcelFileReader excelFileReader) : base(service, excelFileReader)
         {
         }
 

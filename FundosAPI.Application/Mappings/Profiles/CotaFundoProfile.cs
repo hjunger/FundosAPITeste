@@ -10,7 +10,8 @@ namespace FundosAPI.Application.Mappings.Profiles
         {
             CreateMap<CotaFundo, CotaFundoResponseDto>();
             CreateMap<CotaFundoCreateDto, CotaFundo>();
-            CreateMap<CotaFundoUpdateDto, CotaFundo>();            
+            CreateMap<CotaFundoUpdateDto, CotaFundo>();
+            CreateMap<CotaFundoUpdateDto, CotaFundoCreateDto>();
         }
     }
 }

@@ -2,6 +2,7 @@
 using FundosAPI.Application.Interfaces;
 using FundosAPI.Application.Services;
 using FundosAPI.Controllers.Base;
+using FundosAPI.CrossCutting.ExcelReader;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FundosAPI.Controllers
@@ -10,13 +11,28 @@ namespace FundosAPI.Controllers
     [Route("[controller]")]
     public class CotaFundoController : CrudBaseController<CotaFundoResponseDto, CotaFundoCreateDto, CotaFundoUpdateDto>
     {
-        public CotaFundoController(CotaFundoService service) : base(service)
+        private CotaFundoService _service;
+
+        public CotaFundoController(CotaFundoService service, ExcelFileReader excelFileReader) : base(service, excelFileReader)
         {
+            _service = service;
         }
 
         protected override IDto GetNovoObjetoDto()
         {
             return new CotaFundoUpdateDto();
+        }
+
+        [HttpGet("fundo/{id}")]
+        public IActionResult GetCotasDosFundos(int id)
+        {
+            var result = _service.GetCotasPorFundo(id);
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(result);
         }
     }
 }

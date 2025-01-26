@@ -14,5 +14,10 @@ namespace FundosAPI.Dados.Repository
         {
             return _context.Cotas.FirstOrDefault(i => i.CotaId == id);
         }
+
+        public List<CotaFundo> GetCotaFundosByFundoId(int fundoId)
+        {
+            return _context.Cotas.Where(c => c.FundoId == fundoId).ToList();
+        }
     }
 }
