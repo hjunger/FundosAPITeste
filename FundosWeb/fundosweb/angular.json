@@ -3,9 +3,36 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "FundosWeb": {
+    "fundosweb": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +40,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/fundos-web",
+            "outputPath": "dist/fundosweb",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -25,10 +52,14 @@
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -58,10 +89,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "FundosWeb:build:production"
+              "buildTarget": "fundosweb:build:production"
             },
             "development": {
-              "buildTarget": "FundosWeb:build:development"
+              "buildTarget": "fundosweb:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -69,26 +100,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "FundosWeb:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "src/styles.css"
-            ],
-            "scripts": []
+            "buildTarget": "fundosweb:build"
           }
         }
       }
