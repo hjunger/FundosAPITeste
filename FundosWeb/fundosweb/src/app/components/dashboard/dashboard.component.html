@@ -1,1 +1,15 @@
-<h2>dashboard works!</h2>
+<gridster [options]="options">
+    @for (item of dashboard; track item) {
+      <gridster-item [item]="item">
+        <div class="button-holder">
+          <button
+            mat-mini-fab
+            (mousedown)="removeItem($event, item)"
+            (touchstart)="removeItem($event, item)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </gridster-item>
+    }
+  </gridster>

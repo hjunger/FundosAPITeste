@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Projetos\\FundosAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B58FEAEA-AD8B-4AB5-B0C7-1D20CC4922C9}|FundosAPI.Application\\FundosAPI.Application.csproj|d:\\projetos\\fundosapi\\fundosapi.application\\dtos\\fundoresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B58FEAEA-AD8B-4AB5-B0C7-1D20CC4922C9}|FundosAPI.Application\\FundosAPI.Application.csproj|solutionrelative:fundosapi.application\\dtos\\fundoresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B444383E-2256-4B13-8450-35C1B55F5F61}|FundosAPI\\FundosAPI.csproj|d:\\projetos\\fundosapi\\fundosapi\\controllers\\base\\crudbasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B444383E-2256-4B13-8450-35C1B55F5F61}|FundosAPI\\FundosAPI.csproj|solutionrelative:fundosapi\\controllers\\base\\crudbasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -114,11 +118,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CrudBaseController.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI\\Controllers\\Base\\CrudBaseController.cs",
               "RelativeDocumentMoniker": "FundosAPI\\Controllers\\Base\\CrudBaseController.cs",
@@ -132,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "BaseService.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Application\\Services\\BaseService.cs",
               "RelativeDocumentMoniker": "FundosAPI.Application\\Services\\BaseService.cs",
@@ -141,12 +145,24 @@
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-25T18:01:01.633Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FundoResponseDto.cs",
+              "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Application\\DTOs\\FundoResponseDto.cs",
+              "RelativeDocumentMoniker": "FundosAPI.Application\\DTOs\\FundoResponseDto.cs",
+              "ToolTip": "D:\\Projetos\\FundosAPI\\FundosAPI.Application\\DTOs\\FundoResponseDto.cs",
+              "RelativeToolTip": "FundosAPI.Application\\DTOs\\FundoResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T01:08:59.45Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ExcelFileReader.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.CrossCutting\\ExcelReader\\ExcelFileReader.cs",
               "RelativeDocumentMoniker": "FundosAPI.CrossCutting\\ExcelReader\\ExcelFileReader.cs",
@@ -154,12 +170,11 @@
               "RelativeToolTip": "FundosAPI.CrossCutting\\ExcelReader\\ExcelFileReader.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAgwAkAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T20:41:40.152Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-26T20:41:40.152Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CotaFundoController.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI\\Controllers\\CotaFundoController.cs",
               "RelativeDocumentMoniker": "FundosAPI\\Controllers\\CotaFundoController.cs",
@@ -167,12 +182,11 @@
               "RelativeToolTip": "FundosAPI\\Controllers\\CotaFundoController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAB9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T13:46:43.311Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-26T13:46:43.311Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "FundoProfile.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Application\\Mappings\\Profiles\\FundoProfile.cs",
               "RelativeDocumentMoniker": "FundosAPI.Application\\Mappings\\Profiles\\FundoProfile.cs",
@@ -180,12 +194,11 @@
               "RelativeToolTip": "FundosAPI.Application\\Mappings\\Profiles\\FundoProfile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T21:04:57.279Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T21:04:57.279Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Dados\\UnitOfWork\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "FundosAPI.Dados\\UnitOfWork\\IUnitOfWork.cs",
@@ -193,12 +206,11 @@
               "RelativeToolTip": "FundosAPI.Dados\\UnitOfWork\\IUnitOfWork.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T20:18:54.624Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T20:18:54.624Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Dados\\UnitOfWork\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "FundosAPI.Dados\\UnitOfWork\\UnitOfWork.cs",
@@ -206,12 +218,11 @@
               "RelativeToolTip": "FundosAPI.Dados\\UnitOfWork\\UnitOfWork.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAgwCwAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T20:18:59.174Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T20:18:59.174Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "IDto.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Application\\Interfaces\\IDto.cs",
               "RelativeDocumentMoniker": "FundosAPI.Application\\Interfaces\\IDto.cs",
@@ -219,12 +230,11 @@
               "RelativeToolTip": "FundosAPI.Application\\Interfaces\\IDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T19:36:41.005Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T19:36:41.005Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "IService.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Application\\Interfaces\\IService.cs",
               "RelativeDocumentMoniker": "FundosAPI.Application\\Interfaces\\IService.cs",
@@ -232,12 +242,11 @@
               "RelativeToolTip": "FundosAPI.Application\\Interfaces\\IService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T19:28:19.646Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T19:28:19.646Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "FundoController.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI\\Controllers\\FundoController.cs",
               "RelativeDocumentMoniker": "FundosAPI\\Controllers\\FundoController.cs",
@@ -245,12 +254,11 @@
               "RelativeToolTip": "FundosAPI\\Controllers\\FundoController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T14:00:54.642Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T14:00:54.642Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "CotaFundoConfiguration.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Dados\\Mapeamentos\\CotaFundoConfiguration.cs",
               "RelativeDocumentMoniker": "FundosAPI.Dados\\Mapeamentos\\CotaFundoConfiguration.cs",
@@ -258,12 +266,11 @@
               "RelativeToolTip": "FundosAPI.Dados\\Mapeamentos\\CotaFundoConfiguration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T00:35:37.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T00:35:37.475Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "CotaFundoUpdateDto.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Application\\DTOs\\CotaFundoUpdateDto.cs",
               "RelativeDocumentMoniker": "FundosAPI.Application\\DTOs\\CotaFundoUpdateDto.cs",
@@ -271,12 +278,11 @@
               "RelativeToolTip": "FundosAPI.Application\\DTOs\\CotaFundoUpdateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T11:29:41.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-26T11:29:41.1Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "CotaFundo.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Domain\\Entities\\CotaFundo.cs",
               "RelativeDocumentMoniker": "FundosAPI.Domain\\Entities\\CotaFundo.cs",
@@ -284,12 +290,11 @@
               "RelativeToolTip": "FundosAPI.Domain\\Entities\\CotaFundo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T10:59:42.312Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-26T10:59:42.312Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CotaFundoService.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Application\\Services\\CotaFundoService.cs",
               "RelativeDocumentMoniker": "FundosAPI.Application\\Services\\CotaFundoService.cs",
@@ -297,12 +302,11 @@
               "RelativeToolTip": "FundosAPI.Application\\Services\\CotaFundoService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T18:14:25.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T18:14:25.783Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "CotaFundoProfile.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Application\\Mappings\\Profiles\\CotaFundoProfile.cs",
               "RelativeDocumentMoniker": "FundosAPI.Application\\Mappings\\Profiles\\CotaFundoProfile.cs",
@@ -310,12 +314,11 @@
               "RelativeToolTip": "FundosAPI.Application\\Mappings\\Profiles\\CotaFundoProfile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T11:29:20.723Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-26T11:29:20.723Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "CotaFundoCreateDto.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Application\\DTOs\\CotaFundoCreateDto.cs",
               "RelativeDocumentMoniker": "FundosAPI.Application\\DTOs\\CotaFundoCreateDto.cs",
@@ -323,12 +326,11 @@
               "RelativeToolTip": "FundosAPI.Application\\DTOs\\CotaFundoCreateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T11:29:36.492Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-26T11:29:36.492Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "FundoUpdateDto.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Application\\DTOs\\FundoUpdateDto.cs",
               "RelativeDocumentMoniker": "FundosAPI.Application\\DTOs\\FundoUpdateDto.cs",
@@ -336,12 +338,11 @@
               "RelativeToolTip": "FundosAPI.Application\\DTOs\\FundoUpdateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T20:24:29.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T20:24:29.088Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "IBaseEntity.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Domain\\Interfaces\\IBaseEntity.cs",
               "RelativeDocumentMoniker": "FundosAPI.Domain\\Interfaces\\IBaseEntity.cs",
@@ -349,12 +350,11 @@
               "RelativeToolTip": "FundosAPI.Domain\\Interfaces\\IBaseEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T17:31:52.798Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T17:31:52.798Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Fundo.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Domain\\Entities\\Fundo.cs",
               "RelativeDocumentMoniker": "FundosAPI.Domain\\Entities\\Fundo.cs",
@@ -362,12 +362,11 @@
               "RelativeToolTip": "FundosAPI.Domain\\Entities\\Fundo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T00:02:46.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T00:02:46.377Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "RepositoryBase.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Dados\\Repository\\RepositoryBase.cs",
               "RelativeDocumentMoniker": "FundosAPI.Dados\\Repository\\RepositoryBase.cs",
@@ -375,12 +374,11 @@
               "RelativeToolTip": "FundosAPI.Dados\\Repository\\RepositoryBase.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAQwBgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T17:06:28.355Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T17:06:28.355Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "FundoRepository.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Dados\\Repository\\FundoRepository.cs",
               "RelativeDocumentMoniker": "FundosAPI.Dados\\Repository\\FundoRepository.cs",
@@ -388,12 +386,11 @@
               "RelativeToolTip": "FundosAPI.Dados\\Repository\\FundoRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T14:28:59.712Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T14:28:59.712Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "FundoConfiguration.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Dados\\Mapeamentos\\FundoConfiguration.cs",
               "RelativeDocumentMoniker": "FundosAPI.Dados\\Mapeamentos\\FundoConfiguration.cs",
@@ -401,12 +398,11 @@
               "RelativeToolTip": "FundosAPI.Dados\\Mapeamentos\\FundoConfiguration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T00:35:27.444Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T00:35:27.444Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "DatabaseConfiguration.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI\\Configuration\\DatabaseConfiguration.cs",
               "RelativeDocumentMoniker": "FundosAPI\\Configuration\\DatabaseConfiguration.cs",
@@ -414,12 +410,11 @@
               "RelativeToolTip": "FundosAPI\\Configuration\\DatabaseConfiguration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T10:30:17.509Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T10:30:17.509Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "SistemaFundoContext.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI.Dados\\Contexto\\SistemaFundoContext.cs",
               "RelativeDocumentMoniker": "FundosAPI.Dados\\Contexto\\SistemaFundoContext.cs",
@@ -427,12 +422,11 @@
               "RelativeToolTip": "FundosAPI.Dados\\Contexto\\SistemaFundoContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T14:50:46.289Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T14:50:46.289Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI\\Program.cs",
               "RelativeDocumentMoniker": "FundosAPI\\Program.cs",
@@ -440,12 +434,11 @@
               "RelativeToolTip": "FundosAPI\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T23:48:53.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T23:48:53.013Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "AutoMapperConfiguration.cs",
               "DocumentMoniker": "D:\\Projetos\\FundosAPI\\FundosAPI\\Configuration\\AutoMapperConfiguration.cs",
               "RelativeDocumentMoniker": "FundosAPI\\Configuration\\AutoMapperConfiguration.cs",
@@ -453,8 +446,7 @@
               "RelativeToolTip": "FundosAPI\\Configuration\\AutoMapperConfiguration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T10:32:21.542Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T10:32:21.542Z"
             }
           ]
         }
