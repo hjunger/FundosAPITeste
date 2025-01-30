@@ -20,9 +20,9 @@ namespace FundosAPI.Controllers.Base
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            var result = Service.GetAll();
+            var result = await Service.GetAll();
             if(result == null)
             {
                 return NotFound();
@@ -32,9 +32,9 @@ namespace FundosAPI.Controllers.Base
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            var item = Service.GetById(id);
+            var item = await Service.GetById(id);
             if (item == null)
             {
                 return NotFound();
@@ -44,9 +44,9 @@ namespace FundosAPI.Controllers.Base
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] TDtoCreate item)
+        public async Task<IActionResult> Create([FromBody] TDtoCreate item)
         {
-            var results = Service.Insert(item);
+            var results = await Service.Insert(item);
 
             if (results == null || results.Count == 0)
             {
@@ -59,9 +59,9 @@ namespace FundosAPI.Controllers.Base
         }
 
         [HttpPut]
-        public IActionResult Update([FromBody] TDtoUpdate item)
+        public async Task<IActionResult> Update([FromBody] TDtoUpdate item)
         {
-            var results = Service.Update(item);
+            var results = await Service.Update(item);
             if (results == null || results.Count == 0)
             {
                 return Ok(item);
@@ -73,9 +73,10 @@ namespace FundosAPI.Controllers.Base
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            if (Service.Remove(id))
+            var isDeleted = await Service.Remove(id);
+            if (isDeleted)
             {
                 return Ok("Item excluído com sucesso.");
             }
@@ -87,7 +88,7 @@ namespace FundosAPI.Controllers.Base
 
         [HttpPost("upload")]
         [Consumes("multipart/form-data")]
-        public IActionResult UploadArquivo(List<IFormFile> files)
+        public async Task<IActionResult> UploadArquivo(List<IFormFile> files)
         {
             if(files == null || files.Count == 0)
             {
@@ -95,7 +96,7 @@ namespace FundosAPI.Controllers.Base
             }
 
             var results = new List<ValidationResult>();
-            var filesContents = _excelFileReader.ReadFiles(files, results, GetNovoObjetoDto);
+            var filesContents = _excelFileReader.ReadFiles<TDtoUpdate>(files, results);
             if (results.Count > 0)
             {
                 return BadRequest(results);
@@ -106,16 +107,14 @@ namespace FundosAPI.Controllers.Base
                 return BadRequest("Não foi possível ler os arquivos.");
             }
 
-            results = Service.UploadFile(filesContents.ToList());
+            results = await Service.UploadFile(filesContents.ToList());
             if (results.Count > 0)
             {
                 return BadRequest(results);
             }
 
             return Ok();
-        }
-
-        protected abstract IDto GetNovoObjetoDto();
+        }        
 
         //protected virtual IEnumerable<IDto> ReadFiles(List<IFormFile> files, List<ValidationResult> results)
         //{

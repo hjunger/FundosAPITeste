@@ -23,14 +23,14 @@ namespace FundosAPI.Application.Services
 
         protected abstract IRepository<TEntity> Repository { get; }
 
-        public IEnumerable<TDtoResponse> GetAll()
+        public async Task<IEnumerable<TDtoResponse>> GetAll()
         {
-            return Mapper.Map<IEnumerable<TDtoResponse>>(Repository.GetAll());
+            return Mapper.Map<IEnumerable<TDtoResponse>>(await Repository.GetAll());
         }
 
-        public TDtoResponse? GetById(int id)
+        public async Task<TDtoResponse?> GetById(int id)
         {
-            var entity = Repository.FindById(id);
+            var entity = await Repository.FindById(id);
             if (entity == null)
             {
                 return default;
@@ -39,7 +39,7 @@ namespace FundosAPI.Application.Services
             return Mapper.Map<TDtoResponse>(entity);
         }
 
-        public List<ValidationResult> Insert(TDtoCreate dto)
+        public async Task<List<ValidationResult>> Insert(TDtoCreate dto)
         {
             var results = new List<ValidationResult>();
             try
@@ -48,7 +48,7 @@ namespace FundosAPI.Application.Services
                 if (results == null || results.Count == 0)
                 {
                     var entity = Mapper.Map<TEntity>(dto);
-                    Repository.Insert(entity);
+                    await Repository.Insert(entity);
                     UnitOfWork.SaveChanges();
                     dto.Id = entity.Id;
                 }
@@ -62,11 +62,11 @@ namespace FundosAPI.Application.Services
             return results;
         }
 
-        public bool Remove(int id)
+        public async Task<bool> Remove(int id)
         {
             try
             {
-                Repository.Delete(id);
+                await Repository.Delete(id);
                 UnitOfWork.SaveChanges();
                 return true;
             }
@@ -77,16 +77,16 @@ namespace FundosAPI.Application.Services
             }
         }
 
-        public List<ValidationResult> Update(TDtoUpdate dto)
+        public async Task<List<ValidationResult>> Update(TDtoUpdate dto)
         {
             var results = new List<ValidationResult>();
             try
             {
-                var isValid = ValidaDto(dto, results);
+                var isValid = await ValidaDto(dto, results);
                 if (results == null || results.Count == 0)
                 {
                     var entity = Mapper.Map<TEntity>(dto);
-                    Repository.Update(entity);
+                    await Repository.Update(entity);
                     UnitOfWork.SaveChanges();
                 }
             }
@@ -99,7 +99,7 @@ namespace FundosAPI.Application.Services
             return results;
         }
 
-        public List<ValidationResult> UploadFile(List<IDto> dtos)
+        public async Task<List<ValidationResult>> UploadFile(IEnumerable<TDtoUpdate> dtos)
         {
             using (var dbContext = UnitOfWork.SistemaFundoContext)
             {
@@ -111,7 +111,7 @@ namespace FundosAPI.Application.Services
                         if (dto.Id == 0)
                         {
                             var dtoCreate = Mapper.Map<TDtoCreate>(dto);
-                            var resultInsert = Insert(dtoCreate);
+                            var resultInsert = await Insert(dtoCreate);
                             if (resultInsert != null && resultInsert.Count > 0)
                             {
                                 resultUpload.AddRange(resultInsert);
@@ -119,8 +119,8 @@ namespace FundosAPI.Application.Services
                         }
                         else
                         {
-                            var dtoUpdate = (TDtoUpdate)dto;
-                            var resultUpdate = Update(dtoUpdate);
+                            var dtoUpdate = dto;
+                            var resultUpdate = await Update(dtoUpdate);
                             if (resultUpdate != null && resultUpdate.Count > 0)
                             {
                                 resultUpload.AddRange(resultUpdate);
@@ -143,7 +143,7 @@ namespace FundosAPI.Application.Services
             }
         }
 
-        protected virtual bool ValidaDto(object dto, List<ValidationResult> results)
+        protected virtual async Task<bool> ValidaDto(object dto, List<ValidationResult> results)
         {
             var validatorContext = new ValidationContext(dto);
             var isValid = Validator.TryValidateObject(dto, validatorContext, results);

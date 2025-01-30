@@ -18,15 +18,58 @@ namespace FundosAPI.Controllers
             _service = service;
         }
 
-        protected override IDto GetNovoObjetoDto()
+        [HttpGet("fundo/{id}")]
+        public async Task<IActionResult> GetCotasDosFundos(int id)
         {
-            return new CotaFundoUpdateDto();
+            var result = await _service.GetCotasPorFundo(id);
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(result);
         }
 
-        [HttpGet("fundo/{id}")]
-        public IActionResult GetCotasDosFundos(int id)
+        [HttpGet("cotas/{dataInicio:datetime}/{dataFim:datetime}")]
+        public async Task<IActionResult> GetCotasPorPeriodo(DateTime dataInicio, DateTime dataFim)
         {
-            var result = _service.GetCotasPorFundo(id);
+            var result = await _service.GetCotasPeriodo(dataInicio, dataFim);
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(result);
+        }
+
+        [HttpGet("cotas/{dataInicio:datetime}/{dataFim:datetime}/{fundoId:int}")]
+        public async Task<IActionResult> GetCotasPorPeriodo(DateTime dataInicio, DateTime dataFim, int fundoId)
+        {
+            var result = await _service.GetCotasPeriodo(dataInicio, dataFim, fundoId);
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(result);
+        }
+
+        [HttpGet("seriesCotas/{dataInicio:datetime}/{dataFim:datetime}")]
+        public async Task<IActionResult> GetSeriesCotasPorPeriodo(DateTime dataInicio, DateTime dataFim)
+        {
+            var result = await _service.GetSerieCotas(dataInicio, dataFim);
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(result);
+        }
+
+        [HttpGet("seriesCotas/{dataInicio:datetime}/{dataFim:datetime}/{fundoId:int}")]
+        public async Task<IActionResult> GetSeriesCotasPorPeriodo(DateTime dataInicio, DateTime dataFim, int fundoId)
+        {
+            var result = await _service.GetSerieCotas(dataInicio, dataFim, fundoId);
             if (result == null)
             {
                 return NotFound();

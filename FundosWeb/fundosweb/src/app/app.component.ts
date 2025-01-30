@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MenuComponent } from './components/menu/menu.component';
 import { MainComponent } from './components/main/main.component';
 

@@ -1,6 +1,7 @@
 ﻿using FundosAPI.Dados.Contexto;
 using FundosAPI.Dados.Repository.Interfaces;
 using FundosAPI.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace FundosAPI.Dados.Repository
 {
@@ -13,30 +14,31 @@ namespace FundosAPI.Dados.Repository
             _context = context;
         }
 
-        public abstract T? FindById(int id);
+        public abstract Task<T?> FindById(int id);
 
-        public IEnumerable<T> GetAll()
+        public async virtual Task<IEnumerable<T>> GetAll()
         {
-            return _context.Set<T>().ToList();
+            return await _context.Set<T>().ToListAsync();
         }
 
-        public int Insert(T entity)
+        public async Task<int> Insert(T entity)
         {
             var entidadeTipada = (IBaseEntity)entity;
             entidadeTipada.DataCriacao = DateTime.Now;
-            _context.Set<T>().Add(entity);
+            await _context.Set<T>().AddAsync(entity);
             return entidadeTipada.Id;
         }
 
-        public void Update(T entity)
+        public async Task Update(T entity)
         {
+            if (entity == null) return;
             ((IBaseEntity)entity).DataAtualizacao = DateTime.Now;
             _context.Set<T>().Update(entity);
         }
 
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            var entity = FindById(id);
+            var entity = await FindById(id);
             if (entity == null) return;
             _context.Set<T>().Remove(entity);
         }

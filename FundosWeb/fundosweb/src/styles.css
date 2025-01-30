@@ -1,19 +1,16 @@
-@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-@import '../node_modules/bootswatch/dist/cosmo/bootstrap.min.css';
-
 /* You can add global styles to this file, and also import other style files */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    position: relative;
-    font-family: "Roboto", sans-serif;
-    background: #f4f7fa;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-  }
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+html,
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

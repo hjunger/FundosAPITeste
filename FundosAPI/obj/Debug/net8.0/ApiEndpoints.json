@@ -75,6 +75,53 @@
   },
   {
     "ContainingType": "FundosAPI.Controllers.CotaFundoController",
+    "Method": "GetCotasPorPeriodo",
+    "RelativePath": "CotaFundo/cotas/{dataInicio}/{dataFim}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dataInicio",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "dataFim",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FundosAPI.Controllers.CotaFundoController",
+    "Method": "GetCotasPorPeriodo",
+    "RelativePath": "CotaFundo/cotas/{dataInicio}/{dataFim}/{fundoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dataInicio",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "dataFim",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "fundoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FundosAPI.Controllers.CotaFundoController",
     "Method": "GetCotasDosFundos",
     "RelativePath": "CotaFundo/fundo/{id}",
     "HttpMethod": "GET",
@@ -83,6 +130,53 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FundosAPI.Controllers.CotaFundoController",
+    "Method": "GetSeriesCotasPorPeriodo",
+    "RelativePath": "CotaFundo/seriesCotas/{dataInicio}/{dataFim}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dataInicio",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "dataFim",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FundosAPI.Controllers.CotaFundoController",
+    "Method": "GetSeriesCotasPorPeriodo",
+    "RelativePath": "CotaFundo/seriesCotas/{dataInicio}/{dataFim}/{fundoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dataInicio",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "dataFim",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "fundoId",
         "Type": "System.Int32",
         "IsRequired": true
       }

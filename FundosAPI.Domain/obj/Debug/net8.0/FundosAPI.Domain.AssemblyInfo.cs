@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FundosAPI.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4376739fe0b09f9e8d44a9f3541fc09645ca8bae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b316a6aa9453d9df95a91eb40f797ee7918d8e35")]
 [assembly: System.Reflection.AssemblyProductAttribute("FundosAPI.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FundosAPI.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

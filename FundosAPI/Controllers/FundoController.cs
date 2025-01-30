@@ -14,10 +14,5 @@ namespace FundosAPI.Controllers
         public FundoController(FundoService service, ExcelFileReader excelFileReader) : base(service, excelFileReader)
         {
         }
-
-        protected override IDto GetNovoObjetoDto()
-        {
-            return new FundoUpdateDto();
-        }
     }
 }

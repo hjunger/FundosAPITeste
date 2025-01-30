@@ -1,6 +1,4 @@
-﻿using FundosAPI.Application.Interfaces;
-
-namespace FundosAPI.Application.DTOs
+﻿namespace FundosAPI.Application.DTOs
 {
     public class CotaFundoResponseDto
     {
@@ -9,5 +7,6 @@ namespace FundosAPI.Application.DTOs
         public double ValorCota { get; set; }
 
         public int FundoId { get; set; }
+        public string FundoNome { get; set; }
     }
 }

@@ -7,9 +7,9 @@ namespace FundosAPI.CrossCutting.ExcelReader
 {
     public class ExcelFileReader
     {
-        public IEnumerable<IDto> ReadFiles(List<IFormFile> files, List<ValidationResult> results, Func<IDto> getNovoObjetoDto)
+        public IEnumerable<T> ReadFiles<T>(List<IFormFile> files, List<ValidationResult> results)
         {
-            var result = new List<IDto>();
+            var result = new List<T>();
             try
             {
 
@@ -30,24 +30,30 @@ namespace FundosAPI.CrossCutting.ExcelReader
 
                             foreach (var row in rows.Skip(1))
                             {
-                                var dto = getNovoObjetoDto();
+                                var item = Activator.CreateInstance(typeof(T));
+                                if(item == null)
+                                {
+                                    results.Add(new ValidationResult("Erro ao inicializar o item da lista."));
+                                    return new List<T>();
+                                }
+
                                 foreach (var cell in row.Cells())
                                 {
                                     var propName = headers[cell.Address.ColumnNumber - 1];
-                                    var property = dto.GetType().GetProperty(propName);
+                                    var property = item.GetType().GetProperty(propName);
                                     if (property == null)
                                     {
                                         results.Add(new ValidationResult("Cabeçalho inválido."));
-                                        return new List<IDto>();
+                                        return new List<T>();
                                     }
 
                                     var cellValue = cell.Value.ToString();
                                     var propertyType = property.PropertyType;
                                     var data = DateOnly.MinValue;
                                     var val = GetValor(cellValue, propertyType);
-                                    property.SetValue(dto, data != DateOnly.MinValue ? data : val, null);
+                                    property.SetValue(item, data != DateOnly.MinValue ? data : val, null);
                                 }
-                                result.Add(dto);
+                                result.Add((T)item);
                             }
                         }
                     }
@@ -58,7 +64,7 @@ namespace FundosAPI.CrossCutting.ExcelReader
             catch (Exception ex)
             {
                 results.Add(new ValidationResult($"Erro inesperado: {ex.Message}"));
-                return new List<IDto>();
+                return new List<T>();
             }
         }
 

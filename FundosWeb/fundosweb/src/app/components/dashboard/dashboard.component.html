@@ -1,15 +1,20 @@
-<gridster [options]="options">
-    @for (item of dashboard; track item) {
-      <gridster-item [item]="item">
-        <div class="button-holder">
-          <button
-            mat-mini-fab
-            (mousedown)="removeItem($event, item)"
-            (touchstart)="removeItem($event, item)"
-          >
-            <mat-icon>delete</mat-icon>
-          </button>
-        </div>
-      </gridster-item>
-    }
-  </gridster>
+<div class="app-dashboard">
+    <gridster [options]="options">
+        <!-- <gridster-item [item]="{cols: 2, rows: 2, y: 0, x: 0}"> -->
+        <gridster-item [item]="{cols: 4, rows: 2, y: 0, x: 0}">
+            <div class="button-holder">
+                <app-grafico-fundos [signalFundoSelecionadoId]="signalFundoSelecionadoId()"></app-grafico-fundos>
+            </div>
+        </gridster-item>
+        <!-- <gridster-item [item]="{cols: 2, rows: 2, y: 0, x: 2}">
+            <div class="button-holder">
+                <app-grafico-barra-fundos></app-grafico-barra-fundos>
+            </div>
+        </gridster-item> -->
+        <gridster-item [item]="{cols: 4, rows: 2, y: 2, x: 0}">
+            <div class="button-holder">
+                <app-lista-fundos (changeFundoId)="changeFundoId($event)"></app-lista-fundos>
+            </div>
+        </gridster-item>
+    </gridster>
+</div>

@@ -1,0 +1,30 @@
+<button (click)="cancelarFundoSelecionado()">Todos</button>
+<table class="table table-hover table-dark">
+    <thead class="thead-dark">
+      <tr>        
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CNPJ</th>
+        <th scope="col">Administrador</th>
+        <th scope="col">Data de Início</th>
+        <th scope="col" class="d-none d-md-table-cell">Data de Fim</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="fundos && fundos.length">
+    <tr *ngFor="let fundo of fundos" (click)="alteraGraficos(fundo.fundoId)" style="cursor: pointer;">
+      <td scope="row">{{fundo.fundoId}}</td>
+      <td scope="row">{{fundo.fundoNome}}</td>
+      <td scope="row">{{fundo.cnpj}}</td>
+      <td scope="row">{{fundo.administrador}}</td>
+      <td scope="row">{{fundo.dataInicio | DateFormatPipe}}</td>
+      <td scope="row">{{fundo.dataFim | DateFormatPipe}}</td>      
+    </tr>
+  </tbody>
+  <tfoot *ngIf="!fundos.length">
+    <tr>
+      <td colspan="8" class="text-center">
+        <h4>Nenhum fundo encontrado!</h4>
+      </td>
+    </tr>
+  </tfoot>
+</table>

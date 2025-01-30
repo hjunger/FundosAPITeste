@@ -18,11 +18,11 @@ namespace FundosAPI.Application.Services
 
         protected override ICotaFundoRepository Repository => UnitOfWork.CotaFundoRepository;
 
-        protected override bool ValidaDto(object dto, List<ValidationResult> results)
+        protected override async Task<bool> ValidaDto(object dto, List<ValidationResult> results)
         {
             _dictFundos.Clear();
 
-            var isValid = base.ValidaDto(dto, results);
+            var isValid = await base.ValidaDto(dto, results);
             if (!isValid)
             {
                 return isValid;
@@ -56,7 +56,7 @@ namespace FundosAPI.Application.Services
                 return false;
             }
 
-            var fundo = GetFundo(fundoId);
+            var fundo = await GetFundoAsync(fundoId);
             if (fundo == null)
             {
                 results.Add(new ValidationResult("Não foi possível determinar o fundo."));
@@ -78,14 +78,14 @@ namespace FundosAPI.Application.Services
             return results.Count == 0;
         }
 
-        private Fundo? GetFundo(int fundoId)
+        private async Task<Fundo?> GetFundoAsync(int fundoId)
         {
             if(_dictFundos.TryGetValue(fundoId, out var fundoRetorno))
             {
                 return fundoRetorno;
             }
 
-            var fundo = UnitOfWork.FundoRepository.FindById(fundoId);
+            var fundo = await UnitOfWork.FundoRepository.FindById(fundoId);
             if(fundo != null)
             {
                 _dictFundos[fundoId] = fundo;
@@ -93,11 +93,75 @@ namespace FundosAPI.Application.Services
             return fundo;
         }
 
-        public List<CotaFundoResponseDto> GetCotasPorFundo(int fundoId)
+        public async Task<List<CotaFundoResponseDto>> GetCotasPorFundo(int fundoId)
         {
             var repository = UnitOfWork.CotaFundoRepository;
-            var cotasDoFundo = repository.GetCotaFundosByFundoId(fundoId);
+            var cotasDoFundo = await repository.GetCotaFundosByFundoId(fundoId);
             return Mapper.Map<List<CotaFundoResponseDto>>(cotasDoFundo);
+        }
+
+        public async Task<List<CotaFundoResponseDto>> GetCotasPeriodo(DateTime dataInicio, DateTime dataFim, int? fundoId = null)
+        {
+            var reposity = UnitOfWork.CotaFundoRepository;
+            var cotas = await reposity.GetCotasPorPeriodo(dataInicio, dataFim, fundoId);
+            return Mapper.Map<List<CotaFundoResponseDto>>(cotas);
+        }
+
+        public async Task<List<CotaFundoSerieResponseDto>> GetSerieCotas(DateTime dataInicio, DateTime dataFim, int? fundoId = null)
+        {
+            var cotas = await GetCotasPeriodo(dataInicio, dataFim, fundoId);
+            var cotasPorFundo = cotas.GroupBy(c => new {c.FundoId, c.FundoNome}).ToList();
+            var result = new List<CotaFundoSerieResponseDto>();
+
+            var meses = new List<DateOnly>();
+            var mes = new DateOnly(dataInicio.Year, dataInicio.Month, 1);
+            var mesFinal = new DateOnly(dataFim.Year, dataFim.Month, 1);
+            while (mes <= mesFinal)
+            {
+                meses.Add(mes);
+                mes = mes.AddMonths(1);
+            }
+
+            foreach (var cotaFundo in cotasPorFundo)
+            {
+                var item = new CotaFundoSerieResponseDto { FundoId = cotaFundo.Key.FundoId, FundoNome = cotaFundo.Key.FundoNome };
+                var menorData = cotaFundo.Min(c => c.DataCota);
+                var maiorData = cotaFundo.Max(c => c.DataCota);
+                foreach(var m in meses)
+                {
+                    item.Meses.Add($"{m:MM/yyyy}");
+                    var cotasDoMes = cotaFundo.Where(c => c.DataCota.Month == m.Month && c.DataCota.Year == m.Year).OrderBy(c => c.DataCota).ToList();
+                    if (cotasDoMes.Any())
+                    {
+                        item.Valores.Add(cotasDoMes[0].ValorCota);
+                        continue;
+                    }
+
+                    var primeiroDiaProxMes = maiorData.AddMonths(1);
+                    if (primeiroDiaProxMes.Month == m.Month && primeiroDiaProxMes.Year == m.Year)
+                    {
+                        item.Valores.Add(cotaFundo.Last().ValorCota);
+                        continue;
+                    }
+
+                    item.Valores.Add(0);
+                }
+
+                var ultimoMes = mesFinal.AddMonths(1);
+                item.Meses.Add($"{ultimoMes:MM/yyyy}");
+                if(maiorData.Year == mesFinal.Year && maiorData.Month == mesFinal.Month)
+                {
+                    item.Valores.Add(cotaFundo.FirstOrDefault(c => c.DataCota == maiorData)?.ValorCota ?? 0);
+                }
+                else
+                {
+                    item.Valores.Add(0);
+                }
+                
+                result.Add(item);
+            }
+
+            return result;
         }
     }
 }

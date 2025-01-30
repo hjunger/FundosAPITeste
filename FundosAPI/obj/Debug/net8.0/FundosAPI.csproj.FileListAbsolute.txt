@@ -154,10 +154,11 @@ D:\Projetos\FundosAPI\FundosAPI\obj\Debug\net8.0\staticwebassets\msbuild.build.F
 D:\Projetos\FundosAPI\FundosAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.FundosAPI.props
 D:\Projetos\FundosAPI\FundosAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.FundosAPI.props
 D:\Projetos\FundosAPI\FundosAPI\obj\Debug\net8.0\staticwebassets.pack.json
-D:\Projetos\FundosAPI\FundosAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\Projetos\FundosAPI\FundosAPI\obj\Debug\net8.0\FundosAPI.csproj.Up2Date
 D:\Projetos\FundosAPI\FundosAPI\obj\Debug\net8.0\FundosAPI.dll
 D:\Projetos\FundosAPI\FundosAPI\obj\Debug\net8.0\refint\FundosAPI.dll
 D:\Projetos\FundosAPI\FundosAPI\obj\Debug\net8.0\FundosAPI.pdb
 D:\Projetos\FundosAPI\FundosAPI\obj\Debug\net8.0\FundosAPI.genruntimeconfig.cache
 D:\Projetos\FundosAPI\FundosAPI\obj\Debug\net8.0\ref\FundosAPI.dll
+D:\Projetos\FundosAPI\FundosAPI\bin\Debug\net8.0\FundosAPI.CrossCutting.dll
+D:\Projetos\FundosAPI\FundosAPI\bin\Debug\net8.0\FundosAPI.CrossCutting.pdb

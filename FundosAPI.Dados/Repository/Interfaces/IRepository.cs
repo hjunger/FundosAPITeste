@@ -2,10 +2,10 @@
 {
     public interface IRepository<T>
     {
-        IEnumerable<T> GetAll();
-        T? FindById(int id);
-        int Insert(T entity);
-        void Update(T entity);
-        void Delete(int id);
+        Task<IEnumerable<T>> GetAll();
+        Task<T?> FindById(int id);
+        Task<int> Insert(T entity);
+        Task Update(T entity);
+        Task Delete(int id);
     }
 }

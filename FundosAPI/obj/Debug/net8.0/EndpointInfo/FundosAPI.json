@@ -28,6 +28,152 @@
         }
       }
     },
+    "/CotaFundo/cotas/{dataInicio}/{dataFim}": {
+      "get": {
+        "tags": [
+          "CotaFundo"
+        ],
+        "parameters": [
+          {
+            "name": "dataInicio",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "dataFim",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/CotaFundo/cotas/{dataInicio}/{dataFim}/{fundoId}": {
+      "get": {
+        "tags": [
+          "CotaFundo"
+        ],
+        "parameters": [
+          {
+            "name": "dataInicio",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "dataFim",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "fundoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/CotaFundo/seriesCotas/{dataInicio}/{dataFim}": {
+      "get": {
+        "tags": [
+          "CotaFundo"
+        ],
+        "parameters": [
+          {
+            "name": "dataInicio",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "dataFim",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/CotaFundo/seriesCotas/{dataInicio}/{dataFim}/{fundoId}": {
+      "get": {
+        "tags": [
+          "CotaFundo"
+        ],
+        "parameters": [
+          {
+            "name": "dataInicio",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "dataFim",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "fundoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/CotaFundo": {
       "get": {
         "tags": [

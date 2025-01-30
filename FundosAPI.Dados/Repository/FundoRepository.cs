@@ -1,6 +1,7 @@
 ﻿using FundosAPI.Dados.Contexto;
 using FundosAPI.Dados.Repository.Interfaces;
 using FundosAPI.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace FundosAPI.Dados.Repository
 {
@@ -10,9 +11,9 @@ namespace FundosAPI.Dados.Repository
         {
         }
 
-        public override Fundo? FindById(int id)
+        public override async Task<Fundo?> FindById(int id)
         {
-            return _context.Fundos.FirstOrDefault(i => i.FundoId == id);
+            return await _context.Fundos.FirstOrDefaultAsync(i => i.FundoId == id);
         }
     }
 }

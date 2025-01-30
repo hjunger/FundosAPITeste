@@ -4,6 +4,8 @@ namespace FundosAPI.Dados.Repository.Interfaces
 {
     public interface ICotaFundoRepository : IRepository<CotaFundo>
     {
-        List<CotaFundo> GetCotaFundosByFundoId(int fundoId);
+        Task<List<CotaFundo>> GetCotaFundosByFundoId(int fundoId);
+
+        Task<List<CotaFundo>> GetCotasPorPeriodo(DateTime dataInicio, DateTime dataFim, int? fundoId = null);
     }
 }

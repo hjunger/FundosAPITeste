@@ -1,43 +1,64 @@
-import { Component } from '@angular/core';
-import {GridsterComponent, GridsterItemComponent} from 'angular-gridster2';
-import { GridsterConfig, GridsterItem }  from 'angular-gridster2';
-import { MatIconModule } from "@angular/material/icon";
+import {
+  Component,
+  OnInit,
+  signal,
+} from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+
+import {
+  DisplayGrid,
+  GridsterComponent,
+  GridsterConfig,
+  GridsterItemComponent,
+  GridType
+} from 'angular-gridster2';
+
+import { ListaFundosComponent } from "../lista-fundos/lista-fundos.component";
+import { GraficoFundosComponent } from "../grafico-fundos/grafico-fundos.component";
+import { GraficoBarraFundosComponent } from "../grafico-barra-fundos/grafico-barra-fundos.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [GridsterComponent, GridsterItemComponent, MatIconModule],
+  imports: [GridsterComponent, GridsterItemComponent, MatIconModule, ListaFundosComponent, GraficoFundosComponent, GraficoBarraFundosComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+
   options!: GridsterConfig;
-  dashboard!: Array<GridsterItem>;
-
-  static itemChange(item: any, itemComponent: any) {
-    console.info('itemChanged', item, itemComponent);
-  }
-
-  static itemResize(item: any, itemComponent: any) {
-    console.info('itemResized', item, itemComponent);
-  }
+  signalFundoSelecionadoId = signal<number>(0);
 
   ngOnInit(){
+    this.signalFundoSelecionadoId.set(0)
     this.options = {
-      itemChangeCallback: DashboardComponent.itemChange,
-      itemResizeCallback: DashboardComponent.itemResize,
+      gridType: GridType.Fit,
+      displayGrid: DisplayGrid.Always,
+      // fixedColWidth: 105,
+      // fixedRowHeight: 105,
+      keepFixedHeightInMobile: false,
+      keepFixedWidthInMobile: false,
+      mobileBreakpoint: 640,
+      useBodyForBreakpoint: false,
+      pushItems: true,
+      rowHeightRatio: 1,
+      draggable: {
+        enabled: true
+      },
+      resizable: {
+        enabled: true
+      }
     };
-
-    this.dashboard = [
-      {cols: 2, rows: 1, y: 0, x: 0},
-      {cols: 2, rows: 2, y: 0, x: 2}
-    ];
   }
 
-  removeItem($event: MouseEvent | TouchEvent, item: GridsterItem): void {
-    $event.preventDefault();
-    $event.stopPropagation();
-    this.dashboard.splice(this.dashboard.indexOf(item), 1);
+  changedOptions(): void {
+    if (this.options.api && this.options.api.optionsChanged) {
+      this.options.api.optionsChanged();
+    }
+  }
+
+  changeFundoId(fundoId: number) {
+    this.signalFundoSelecionadoId.set(fundoId)
   }
 }
